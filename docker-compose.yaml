@@ -23,7 +23,7 @@ services:
     - mongodb
     - redis
   redis:
-    image: redis:v1
+    image: redis
     
 
 
