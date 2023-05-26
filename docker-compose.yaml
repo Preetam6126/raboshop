@@ -10,7 +10,7 @@ services:
     image: catalogue:v1
     container_name: catalogue
     depends_on:
-    - mongo
+    - mongodb
   web:
     image: web:v1
     container_name: web
@@ -26,7 +26,7 @@ services:
     image: user:v1
     container_name: user
     depends_on:
-    - mongo
+    - mongodb
     - redis
   redis:
     image: redis
