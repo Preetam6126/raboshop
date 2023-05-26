@@ -4,13 +4,13 @@ networks:
     driver: bridge
 services:
   mongodb:
-    image: mongodb:v1
-    container_name: mongodb
+    image: mongo:v1
+    container_name: mongo
   catalogue:
     image: catalogue:v1
     container_name: catalogue
     depends_on:
-    - mongodb
+    - mongo
   web:
     image: web:v1
     container_name: web
@@ -26,7 +26,7 @@ services:
     image: user:v1
     container_name: user
     depends_on:
-    - mongodb
+    - mongo
     - redis
   redis:
     image: redis
@@ -44,6 +44,12 @@ services:
     container_name: shipping
     depends_on:
     - mysql
+  # payment:
+  #   image: payment:v1
+  #   container_name: payment
+  #   depends_on:
+  #   - user
+    
     
     
 
